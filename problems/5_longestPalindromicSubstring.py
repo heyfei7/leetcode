@@ -3,11 +3,10 @@ from test import TestSuite
 
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        slen = len(s)
         dp = list()
-        for c in range(0,slen):
+        for c in range(0,len(s)):
             dp.append({"c":s[c],"start":c,"len":1})
-        for i in range(1, slen):
+        for i in range(1, len(s)):
             last_start = dp[i-1]["start"]
             last_len = dp[i-1]["len"]
             if 0 <= last_start-1 and s[i] == s[last_start-1]:

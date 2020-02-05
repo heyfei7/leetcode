@@ -13,7 +13,7 @@ class Solution:
             r = r * 10 + pos_x % 10
             pos_x = pos_x // 10
         r = r * (-1 if neg else 1)
-        return r if (Solution.MIN_INT <= r and r <= Solution.MAX_INT) else 0
+        return r if (Solution.MIN_INT <= r <= Solution.MAX_INT) else 0
 
 
 tests = TestSuite(lambda x: Solution().reverse(x[0]))
